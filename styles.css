@@ -262,6 +262,10 @@ p {
     background-color: #c0392b;
 }
 
+footer a{
+    text-decoration: none;
+}
+
 
 @media (min-height: 500px) {
     .container {
