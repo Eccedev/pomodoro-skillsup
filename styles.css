@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #847d893a;
+    padding: 1rem;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color:  #6863ff38;
+    padding: 1rem;
+    border: 1px solid #6863ff4f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+   
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00538a;
+    margin-bottom: 1rem;
+}
+
+.skill-input {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+#skillName {
+    flex-grow: 1;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+}
+
+#saveSkill {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: 1px solid #26628a;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#saveSkill:hover {
+    background-color: #2980b9;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 0.7rem;
+}
+
+/* boton y modal de la ventana emergente */
+.mostrar-modal {
+    padding: 0.6rem;
+    margin-bottom: 0.7rem;
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: 1px solid #26628a;
+    border-radius: 0.3rem;
+}
+.mostrar-modal:hover {
+    background-color: #2980b9;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    margin-top: 0.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    background-color: rgba(70, 69, 69, 0.466);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 88%;
+}
+
+/* Botón de cerrar modal */
+.close {
+    color: #fc0202;
+    float: right;
+    font-size: 2.5rem;
+    padding: 0rem 0.5rem;
+    margin: -15px -15px 0 0;
+    font-weight: bold;
+    border: 1px solid #fc0202;
+    border-radius: 0.5rem;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.texto-modal {
+    font-size: 0.8rem;
+}
+
+#systemSelect {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#startPause,
+#reset {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #26628a;
+    border-radius: 0.3rem;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s;
+}
+#startPause:hover {
+    background-color: #2980b9;
+}
+#reset:hover {
+    background-color: #2980b9;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.medals {
+    font-size: 1.8rem;
+    margin: 1rem;
+}
+
+.history {
+    margin-top: 0.8rem;
+    text-align: center;
+    overflow-y: visible;
+}
+
+.history h5 {
+    margin-bottom: 0.2rem;
+}
+
+#historyList {
+    list-style-type: none;
+    padding: 0;
+    max-height: 6rem;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#historyList li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+#historyList li:last-child {
+    border-bottom: none;
+}
+
+.totals-display {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #3498db;
+}
+
+#message {
+    margin-top: 1rem;
+    font-weight: lighter;
+}
+
+.acumulado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.651);
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 0 0.5rem 0.7rem 0.5rem;
+}
+
+.totals-display {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #00538a;
+    margin-right: 10px;
+}
+
+.reset-totals {
+    margin-top: 0.7rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 0.2rem;
+}
+
+.reset-totals:hover {
+    background-color: #c0392b;
+}
+
+
+@media (min-height: 500px) {
+    .container {
+        margin-top: 9rem;
+    }
+    #historyList {
+        min-height: 5rem;
+    }
+}
+@media (min-height: 600px) {
+    .container {
+        margin-top: 1rem;
+    }
+    #historyList {
+        min-height: 7rem;
+    }
+}
+@media (min-height: 700px) {
+    .container {
+        margin-top: 1rem;
+    }
+    #historyList {
+        min-height: 10rem;
+    }
+}
+@media (min-height: 800px) {
+    .container {
+        margin-top: 0.5rem;
+    }
+    #historyList {
+        min-height: 13rem;
+    }
+}
+@media (min-height: 900px) {
+    .container {
+        margin-top: 0.5rem;
+    }
+    #historyList {
+        min-height: 16rem;
+    }
+}
+
+/* estilos para pantallas en orientación vertical */
+@media (min-height: 700px) and (min-width: 700px) {
+    body {
+        justify-content: flex-start;
+    }
+    .container {
+        margin-top: 0.5rem;
+    }
+}
+
+
+/* Estilos para pantallas en orientación horizontal */
+@media (min-height: 300px) and (min-width: 300px) and (orientation: landscape) {
+    .container {
+        margin-top: 19rem;
+    }
+}
+@media (min-height: 400px) and (min-width: 400px) and (orientation: landscape) {
+    .container {
+        margin-top: 15rem;
+    }
+}
+@media (min-height: 500px) and (min-width: 500px) and (orientation: landscape) {
+    .container {
+        margin-top: 9rem;
+    }
+}
+@media (min-height: 600px) and (min-width: 600px) and (orientation: landscape) {
+    .container {
+        margin-top: 6rem;
+    }
+}
+@media (min-height: 700px) and (min-width: 700px) and (orientation: landscape) {
+    .container {
+        margin-top: 3rem;
+    }
+}
+@media (min-height: 800px) and (min-width: 800px) and (orientation: landscape) {
+    .container {
+        margin-top: 1rem;
+    }
+}
+

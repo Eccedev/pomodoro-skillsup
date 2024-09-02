@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pomodoro SkillsUp App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="logo">Pomodoro SkillsUp</h1>
+        <div class="skill-input">
+            <input type="text" id="skillName" placeholder="Anota qué vas a mejorar">
+            <button id="saveSkill">Guardar</button>
+        </div>
+        <h2>¡Eres imparable!</h2>
+        <p>Selecciona un Sistema de mejora</p>
+        <button id="mostrarModal" class="mostrar-modal">Saber más sobre los Sistemas</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="texto-modal">Los sistemas <a href="https://www.cis-spain.com/blog/metodo-de-estudio-pomodoro-optimiza-tu-tiempo-de-estudio/">"pomodoro"</a> son intervalos de tiempo "aplicando" (verde) y "descansando"
+                    (rosa) para mejorar destrezas/conocimientos de forma más efectiva <a href="https://www.cell.com/neuron/fulltext/S0896-6273(10)00006-1">(ver artículo)</a>. Localiza tu sistema y gana medallas cada 30'.</p>
+                <ul class="ul-modal texto-modal">
+                    <li><strong>Sistema 25/5 standar:</strong> (25 minutos aplicando + 5 minutos descansando) x 8 veces
+                        (Total: 4h:00')</li>
+                    <li><strong>Sistema 25/5 medium:</strong> (25 minutos aplicando + 5 minutos descansando) x 4 veces
+                        (Total: 2h:00')</li>
+                    <li><strong>Sistema 25/5 basic:</strong> (25 minutos aplicando + 5 minutos descansando) x 2 veces
+                        (Total: 1h:00')</li>
+                    <li><strong>Sistema 25/5 mini:</strong> (25 minutos aplicando + 5 minutos descansando) (Total:
+                        0h:30')</li>
+                    <li><strong>Sistema 45/15 standar:</strong> (45 minutos aplicando + 15 minutos descansando) x 4
+                        veces (Total: 4h:00')</li>
+                    <li><strong>Sistema 45/15 medium:</strong> (45 minutos aplicando + 15 minutos descansando) x 2 veces
+                        (Total: 2h:00')</li>
+                    <li><strong>Sistema 45/15 basic:</strong> (45 minutos aplicando + 15 minutos descansando) (Total:
+                        1h:00')</li>
+                    <li><strong>Sistema 90/20 standar:</strong> (90 minutos aplicando + 20 minutos descansando) x 2
+                        veces (Total: 3h:40')</li>
+                    <li><strong>Sistema 90/20 medium:</strong> (90 minutos aplicando + 20 minutos descansando) (Total:
+                        1h:50')</li>
+                    <li><strong>Sistema combi3 inline:</strong> Sistema 90/20 medium+Sistema 45/15 basic+Sistema 25/5
+                        mini (Total: 3h:20')</li>
+                    <li><strong>Sistema combi3 super:</strong> Sistema 90/5 medium+Sistema 45/5 basic+Sistema 25/5 mini
+                        (Total: 2h:55')</li>
+                    <li><strong>Sistema combi2 inline:</strong> Sistema 45/15 basic+Sistema 25/5 mini (Total: 1h:30')
+                    </li>
+                    <li><strong>Sistema combi2 super:</strong> Sistema 45/5 basic+Sistema 25/5 mini (Total: 1h:20')</li>
+                </ul>
+            </div>
+        </div>
+
+        <select id="systemSelect">
+            <optgroup label="Sistema contador libre">
+                <option value="0">Sistema contador regresivo libre</option>
+            </optgroup>
+            <optgroup label="Sistema 25/5 - aplicando/descansando">
+                <option value="1">Sistema 25/5 standar - 4h:00'</option>
+                <option value="2">Sistema 25/5 medium - 2h:00'</option>
+                <option value="3">Sistema 25/5 basic - 1h:00'</option>
+                <option value="4">Sistema 25/5 mini - 0h:30'</option>
+            </optgroup>
+            <optgroup label="Sistema 45/15 - aplicando/descansando">
+                <option value="5">Sistema 45/15 standar - 4h:00'</option>
+                <option value="6">Sistema 45/15 medium - 2h:00'</option>
+                <option value="7">Sistema 45/15 basic - 1h:00'</option>
+            </optgroup>
+            <optgroup label="Sistema 90/20 - aplicando/descansando">
+                <option value="8">Sistema 90/20 standar - 3h:40'</option>
+                <option value="9">Sistema 90/20 medium - 1h:50'</option>
+            </optgroup>
+            <optgroup label="Sistema Combi - 3 sistemas/2 sistemas">
+                <option value="10">Sistema Combi3 inline - 3h:20'</option>
+                <option value="11">Sistema Combi3 super - 2h:55'</option>
+                <option value="12">Sistema Combi2 inline - 1h:30'</option>
+                <option value="13">Sistema Combi2 super - 1h:20'</option>
+            </optgroup>
+        </select>
+
+        <div class="button-container">
+            <button id="startPause">Comenzar</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div class="timer-container">
+            <div id="timer" class="timer">00:00:00</div>
+            <div id="medals" class="medals">0 Medallas</div>
+        </div>
+
+        <div class="acumulado">
+            <div id="totalsDisplay" class="totals-display"></div>
+            <button id="resetTotals" class="reset-totals">X</button>
+        </div>
+    </div>
+
+    <div id="history" class="history">
+        <h5>Historial de Sesiones</h5>
+        <ul id="historyList"></ul>
+    </div>
+
+    <div id="message"></div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
